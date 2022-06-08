@@ -1,0 +1,20 @@
+server:
+  port: 8090  #端口号
+spring:
+  application:
+    name: wx-payment #服务名——微信支付
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher  #swagger配置
+  jackson: #json时间格式
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:  #数据库配置
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/payment_demo?serverTimezone=GMT%2B8&characterEncoding=utf-8
+    username: root
+    password: root
+mybatis-plus:   #MybatisPlus配置
+  configuration: #控制台打印sql日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    mapper-locations: classpath:com/atguigu/wx/payment/mapper/xml/*.xml

@@ -1,20 +1,20 @@
 server:
-  port: 8090  #�˿ں�
+  port: 8090
 spring:
   application:
-    name: wx-payment #����������΢��֧��
-  mvc:
+    name: wx-payment
+  mvc: #mp配置
     pathmatch:
-      matching-strategy: ant_path_matcher  #swagger����
-  jackson: #jsonʱ���ʽ
+      matching-strategy: ant_path_matcher
+  jackson:  #json日期配置
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
-  datasource:  #���ݿ�����
+  datasource:  #数据库配置
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/payment_demo?serverTimezone=GMT%2B8&characterEncoding=utf-8
     username: root
     password: root
-mybatis-plus:   #MybatisPlus����
-  configuration: #����̨��ӡsql��־
+mybatis-plus:
+  configuration: #控制台打印sql语句
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     mapper-locations: classpath:com/atguigu/wx/payment/mapper/xml/*.xml
